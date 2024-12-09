@@ -1,0 +1,69 @@
+{
+  "name": "egg-node-backend",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "compressing": "^1.10.1",
+    "crypto-js": "^4.2.0",
+    "egg": "^3.17.5",
+    "egg-cors": "^3.0.1",
+    "egg-jwt": "^3.1.7",
+    "egg-redis": "^2.6.0",
+    "egg-scripts": "2",
+    "egg-sequelize": "^6.0.0",
+    "egg-validate": "^2.0.2",
+    "egg-view-ejs": "^3.0.0",
+    "mysql2": "^3.11.3",
+    "svg-captcha": "^1.4.0"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0",
+    "sequelize-cli": "^6.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-gstar --port=7001 --workers=8",
+    "stop": "egg-scripts stop --daemon --title=egg-server-gstar",
+    "dev": "egg-bin dev --port=7002",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "db-create-dev": "sequelize db:create --env development",
+    "db-migrate-dev": "sequelize db:migrate --env development",
+    "db-undo-dev": "sequelize db:migrate:undo --env development",
+    "db-undo-all-dev": "sequelize db:migrate:undo:all --env development",
+    "db-seed-dev": "sequelize db:seed:all --env development",
+    "db-seed-undo-dev": "sequelize db:seed:undo:all --env development",
+    "db-create-prod": "sequelize db:create --env production",
+    "db-migrate-prod": "sequelize db:migrate --env production",
+    "db-undo-prod": "sequelize db:migrate:undo --env production",
+    "db-seed-prod": "sequelize db:seed:all --env production"
+
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "小袁同学",
+  "license": "MIT"
+}
